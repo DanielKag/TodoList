@@ -18,6 +18,7 @@ import { GetLowPipe } from './Pipes/GetLow/get-low.pipe';
 import { FilterByPipe } from './Pipes/FilterBy/filter-by.pipe';
 import { MarkerDirective } from './marker.directive';
 import { AutoFocusDirective } from './auto-focus.directive';
+import { IfDirective } from './if.directive';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { AutoFocusDirective } from './auto-focus.directive';
                  GetLowPipe,
                  FilterByPipe,
                  MarkerDirective,
-                 AutoFocusDirective],
+                 AutoFocusDirective,
+                 IfDirective],
                 exports: [TodolistComponent]
 })
 export class TodolistModule { }
