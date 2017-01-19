@@ -1,0 +1,17 @@
+<li [class.completed] = "item.done">
+
+  <div class="view">
+    <input class="toggle"
+           [checked]="item.done"
+           type="checkbox"
+           (change)= "checkBoxClicked($event)">
+
+    <label marker>{{ item.title | getLow }}</label>
+
+    <button class="destroy" (click)="list.removeItem(item)"></button>
+
+  </div>
+
+  <input class="edit">
+
+</li>

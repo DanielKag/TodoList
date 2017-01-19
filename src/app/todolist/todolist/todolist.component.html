@@ -1,0 +1,16 @@
+<section class="todoapp">
+  <app-list-header>
+    <app-widget-title [text]="appTitle"></app-widget-title>
+    <app-item-input (itemClicked)="addItemToList($event)"></app-item-input>
+  </app-list-header>
+
+  <app-list-main>
+    <app-list-toggle (click)="_list.toggleAll()"></app-list-toggle>
+    <app-list-items></app-list-items>
+  </app-list-main>
+
+  <app-list-footer>
+    <app-counter [numberOfTasksRemaining]="_list.numberOfTasksRemaining()"></app-counter>
+    <app-action-btn (click)="_list.clearDone()"></app-action-btn>
+  </app-list-footer>
+</section>>
