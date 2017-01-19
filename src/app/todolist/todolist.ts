@@ -1,14 +1,14 @@
 import {Item} from "./item";
-import {ConsoleLoggerService} from "./console-logger.service";
-import {Injectable} from '@angular/core'
-import {StorageService} from './storage.service'
+import {ConsoleLoggerService} from '../utils/console-logger.service';
+import {Injectable} from '@angular/core';
+import {StorageService} from '../utils/storage.service';
 
 @Injectable()
 export class Todolist {
 
     private _items : Item[];
     private logger: ConsoleLoggerService;
-    private storage: StorageService;        
+    private storage: StorageService;
 
     constructor(consoleLogger: ConsoleLoggerService, storage: StorageService) {
         this._items = storage.fetch('LIST') || [];
@@ -22,7 +22,7 @@ export class Todolist {
     }
 
     public addItem(title: string) : Item {
-        let newItem = new Item(title);
+        const newItem = new Item(title);
         this._items.push(newItem);
         this.logger.log("Item added: " + title);
         this.sync();
